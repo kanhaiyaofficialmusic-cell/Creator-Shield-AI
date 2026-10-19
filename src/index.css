@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #090d16;
+    --foreground: #f1f5f9;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Subtle Cyber Grid & Radar Glow */
+.cyber-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.radar-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.radar-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(56, 189, 248, 0.04) 50%,
+    transparent 100%
+  );
+  animation: sweep 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sweep {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+/* Custom scrollbars for cyber console look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d131f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}

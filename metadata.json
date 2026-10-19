@@ -1,0 +1,6 @@
+{
+  "name": "CreatorShield AI",
+  "description": "Cybersecurity defense platform detecting fake sponsorships, credential harvesting, and phishing attempts targeting content creators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
